@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+import { MapPin, Phone, MessageCircle } from "lucide-react";
+import heroBackground from "@/assets/hero-terrace.png";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -59,11 +59,20 @@ const Hero = () => {
             <span>Bhurban, Pakistan</span>
           </a>
           <a 
-            href="tel:+92XXXXXXXXXX"
+            href="tel:+923175622550"
             className="flex items-center gap-2 hover:text-primary-foreground transition-smooth"
           >
             <Phone className="w-5 h-5" />
-            <span>Contact Us</span>
+            <span>+92 317 5622550</span>
+          </a>
+          <a 
+            href="https://wa.me/923351152650"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-primary-foreground transition-smooth"
+          >
+            <MessageCircle className="w-5 h-5" />
+            <span>WhatsApp</span>
           </a>
         </div>
       </div>

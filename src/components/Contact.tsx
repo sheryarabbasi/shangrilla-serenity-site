@@ -32,21 +32,9 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-foreground">Phone</p>
-                    <a href="tel:+92XXXXXXXXXX" className="text-muted-foreground hover:text-primary transition-smooth">
-                      +92 XXX XXXXXXX
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Email</p>
-                    <a href="mailto:info@shangrillahouse.com" className="text-muted-foreground hover:text-primary transition-smooth">
-                      info@shangrillahouse.com
+                    <p className="font-medium text-foreground">Call Us</p>
+                    <a href="tel:+923175622550" className="text-muted-foreground hover:text-primary transition-smooth">
+                      +92 317 5622550
                     </a>
                   </div>
                 </div>
@@ -57,8 +45,20 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">WhatsApp</p>
-                    <a href="https://wa.me/92XXXXXXXXXX" className="text-muted-foreground hover:text-primary transition-smooth">
-                      Chat with us
+                    <a href="https://wa.me/923351152650" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-smooth">
+                      +92 335 1152650
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">International</p>
+                    <a href="tel:+971558230565" className="text-muted-foreground hover:text-primary transition-smooth">
+                      +971 55 8230565
                     </a>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const Contact = () => {
               <h4 className="font-semibold text-lg mb-3 text-card-foreground">Check-in & Check-out</h4>
               <div className="space-y-2 text-muted-foreground">
                 <p>Check-in: 2:00 PM onwards</p>
-                <p>Check-out: 12:00 PM</p>
+                <p>Check-out: 11:00 AM</p>
               </div>
             </div>
           </div>

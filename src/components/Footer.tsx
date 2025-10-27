@@ -50,11 +50,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
             <div className="space-y-3 mb-6">
               <a 
-                href="tel:+92XXXXXXXXXX" 
+                href="tel:+923175622550" 
                 className="flex items-center gap-2 text-background/80 hover:text-background transition-smooth"
               >
                 <Phone className="w-4 h-4" />
-                <span>+92 XXX XXXXXXX</span>
+                <span>+92 317 5622550</span>
               </a>
               <a 
                 href="mailto:info@shangrillahouse.com" 

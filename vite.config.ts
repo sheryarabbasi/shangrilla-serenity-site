@@ -9,7 +9,7 @@ import { componentTagger } from "lovable-tagger";
 const GITHUB_PAGES_BASE = "/shangrilla-serenity-site/";
 
 export default defineConfig(({ mode }) => ({
-  base: GITHUB_PAGES_BASE,
+  base: "/",  // Changed to "/" for custom domain
   server: {
     host: "::",
     port: 8080,

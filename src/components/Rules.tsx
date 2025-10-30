@@ -1,4 +1,4 @@
-import { ShieldCheck, Cigarette, Users, Sofa, Wrench, Sparkles, HeartHandshake } from "lucide-react";
+import { Cigarette, Users, Sofa, Wrench, Sparkles, HeartHandshake } from "lucide-react";
 
 const Rules = () => {
   const rules = [
@@ -11,11 +11,6 @@ const Rules = () => {
       icon: Cigarette,
       title: "No Smoking Indoors",
       description: "Smoking is strictly prohibited inside the rooms."
-    },
-    {
-      icon: ShieldCheck,
-      title: "Extra Guest Policy",
-      description: "Extra guests beyond booking will be charged Rs. 2000 per person."
     },
     {
       icon: Sofa,

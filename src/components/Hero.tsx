@@ -20,13 +20,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground animate-fade-in">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-          Shangrilla House Bhurban
+          Luxury Guest House in Bhurban near Murree
         </h1>
         <p className="text-xl md:text-2xl mb-4 max-w-2xl mx-auto font-light">
-          A Serene Retreat for Families
+          Premium Holiday Home & Family Retreat
         </p>
         <p className="text-lg md:text-xl mb-12 max-w-xl mx-auto opacity-90">
-          Experience tranquility in the heart of nature's embrace
+          Experience Shangrilla House - Your perfect mountain escape near Murree, Bhurban & Nathia Gali
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">

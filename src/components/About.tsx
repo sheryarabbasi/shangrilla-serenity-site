@@ -4,18 +4,18 @@ const About = () => {
   const features = [
     {
       icon: Home,
-      title: "Comfortable Accommodation",
-      description: "Well-appointed rooms designed for your comfort and relaxation"
+      title: "Luxury Guest House",
+      description: "Premium accommodation in Bhurban with modern amenities and elegant rooms designed for comfort"
     },
     {
       icon: Users,
-      title: "Family-Friendly",
-      description: "Perfect for families seeking quality time together in a peaceful setting"
+      title: "Perfect Family Holiday Home",
+      description: "Ideal for families visiting Murree, Bhurban, and Nathia Gali seeking quality time in peaceful mountains"
     },
     {
       icon: Mountain,
-      title: "Scenic Location",
-      description: "Nestled in the beautiful mountains of Bhurban with breathtaking views"
+      title: "Prime Location Near Murree",
+      description: "Situated in scenic Bhurban with breathtaking mountain views, close to Murree and Nathia Gali attractions"
     }
   ];
 
@@ -24,12 +24,13 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Welcome to Shangrilla House
+            Welcome to Shangrilla House Bhurban
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover a haven of peace and tranquility where families come together to create 
-            unforgettable memories. Our guest house offers the perfect blend of comfort, 
-            serenity, and natural beauty.
+            Your premier guest house and holiday home in Bhurban, perfectly located near Murree and Nathia Gali. 
+            Discover a haven of peace where families create unforgettable memories in the beautiful mountains 
+            of Pakistan. Our luxury accommodation offers the perfect blend of comfort, modern amenities, and 
+            stunning natural beauty.
           </p>
         </div>
 

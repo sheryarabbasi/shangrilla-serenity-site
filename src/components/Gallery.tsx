@@ -7,6 +7,15 @@ import gallery6 from "@/assets/gallery-6.jpg";
 import gallery7 from "@/assets/gallery-7.jpg";
 import gallery8 from "@/assets/gallery-8.jpg";
 import gallery9 from "@/assets/gallery-9.jpg";
+import gallery10 from "@/assets/gallery-10.jpg";
+import gallery11 from "@/assets/gallery-11.jpg";
+import gallery12 from "@/assets/gallery-12.jpg";
+import gallery13 from "@/assets/gallery-13.jpg";
+import gallery14 from "@/assets/gallery-14.jpg";
+import gallery15 from "@/assets/gallery-15.jpg";
+import gallery16 from "@/assets/gallery-16.jpg";
+import gallery17 from "@/assets/gallery-17.jpg";
+import gallery18 from "@/assets/gallery-18.jpg";
 
 const Gallery = () => {
   const images = [
@@ -18,7 +27,16 @@ const Gallery = () => {
     { id: 6, src: gallery6, alt: "Breathtaking Murree and Nathia Gali mountain view from Shangrilla House room" },
     { id: 7, src: gallery7, alt: "Cozy family-friendly bedroom at Bhurban holiday home with comfortable seating" },
     { id: 8, src: gallery8, alt: "Well-appointed luxury bedroom suite in Bhurban guest house near Murree" },
-    { id: 9, src: gallery9, alt: "Bright elegant bedroom at Shangrilla House Bhurban vacation rental" }
+    { id: 9, src: gallery9, alt: "Bright elegant bedroom at Shangrilla House Bhurban vacation rental" },
+    { id: 10, src: gallery10, alt: "Spacious terrace with mountain view seating at Shangrilla House Bhurban guest house" },
+    { id: 11, src: gallery11, alt: "Panoramic Murree hills view from Shangrilla House Bhurban holiday home" },
+    { id: 12, src: gallery12, alt: "Beautiful rainbow over Murree mountains visible from Shangrilla House terrace" },
+    { id: 13, src: gallery13, alt: "Stunning mountain vista from covered terrace at Bhurban luxury guest house" },
+    { id: 14, src: gallery14, alt: "Golden sunset view over Murree and Nathia Gali from Shangrilla House Bhurban" },
+    { id: 15, src: gallery15, alt: "Winter snow scenery near Shangrilla House Bhurban - perfect for snow lovers" },
+    { id: 16, src: gallery16, alt: "Night view of Murree hills from Shangrilla House Bhurban vacation rental" },
+    { id: 17, src: gallery17, alt: "Peaceful mountain scenery from balcony at Shangrilla House guest house Bhurban" },
+    { id: 18, src: gallery18, alt: "Exterior view of Shangrilla House Bhurban - premium holiday home near Murree" }
   ];
 
   return (

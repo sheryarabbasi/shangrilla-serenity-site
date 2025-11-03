@@ -4,6 +4,7 @@ import Gallery from "@/components/Gallery";
 import VideoGallery from "@/components/VideoGallery";
 import Amenities from "@/components/Amenities";
 import Rules from "@/components/Rules";
+import Reviews from "@/components/Reviews";
 import Location from "@/components/Location";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ const Index = () => {
       <VideoGallery />
       <Amenities />
       <Rules />
+      <Reviews />
       <Location />
       <Contact />
       <Footer />

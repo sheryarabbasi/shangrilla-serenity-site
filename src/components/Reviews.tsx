@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Reviews = () => {
   const reviews = [
@@ -44,8 +45,11 @@ const Reviews = () => {
     }
   ];
 
+  // Duplicate reviews for infinite scroll effect
+  const duplicatedReviews = [...reviews, ...reviews, ...reviews];
+
   return (
-    <section id="reviews" className="py-24 bg-background">
+    <section id="reviews" className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
@@ -67,13 +71,12 @@ const Reviews = () => {
                     />
                   ))}
                 </div>
-                <p className="text-sm text-muted-foreground mt-1">38 reviews</p>
               </div>
             </div>
           </div>
 
           <a 
-            href="https://maps.app.goo.gl/5gRwLKKSTsB1P3qC9" 
+            href="https://maps.app.goo.gl/5gRwLKKSTsB1P3qC9?g_st=ipc" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-smooth font-medium"
@@ -85,44 +88,46 @@ const Reviews = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reviews.map((review, index) => (
-            <div 
-              key={review.id}
-              className="bg-accent/5 rounded-2xl p-6 shadow-soft hover:shadow-elevated transition-smooth animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary font-semibold">{review.avatar}</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">{review.name}</h3>
-                    <p className="text-sm text-muted-foreground">{review.date}</p>
+        {/* Auto-scrolling slider */}
+        <div className="relative">
+          <div className="flex gap-6 animate-scroll">
+            {duplicatedReviews.map((review, index) => (
+              <div 
+                key={`${review.id}-${index}`}
+                className="flex-shrink-0 w-[350px] bg-accent/5 rounded-2xl p-6 shadow-soft"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary font-semibold">{review.avatar}</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">{review.name}</h3>
+                      <p className="text-sm text-muted-foreground">{review.date}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="flex gap-1 mb-3">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className="w-4 h-4 fill-primary text-primary" 
-                  />
-                ))}
-              </div>
+                <div className="flex gap-1 mb-3">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star 
+                      key={i} 
+                      className="w-4 h-4 fill-primary text-primary" 
+                    />
+                  ))}
+                </div>
 
-              <p className="text-muted-foreground leading-relaxed">
-                {review.text}
-              </p>
-            </div>
-          ))}
+                <p className="text-muted-foreground leading-relaxed">
+                  {review.text}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">
           <a 
-            href="https://maps.app.goo.gl/5gRwLKKSTsB1P3qC9" 
+            href="https://maps.app.goo.gl/5gRwLKKSTsB1P3qC9?g_st=ipc" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-smooth shadow-soft hover:shadow-elevated"
@@ -131,6 +136,25 @@ const Reviews = () => {
           </a>
         </div>
       </div>
+
+      <style>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-350px * 5 - 1.5rem * 5));
+          }
+        }
+
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };

@@ -12,8 +12,11 @@ const VideoGallery = () => {
     { id: 10, src: "/videos/view-10.mp4", title: "Gorgeous mountain landscape from Bhurban vacation rental terrace" }
   ];
 
+  // Duplicate videos for infinite scroll effect
+  const duplicatedVideos = [...videos, ...videos, ...videos];
+
   return (
-    <section id="video-gallery" className="py-24 bg-accent/5">
+    <section id="video-gallery" className="py-24 bg-accent/5 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
@@ -24,29 +27,50 @@ const VideoGallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videos.map((video, index) => (
-            <div 
-              key={video.id}
-              className="relative aspect-video rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-smooth group animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <video 
-                src={video.src}
-                controls
-                preload="metadata"
-                className="w-full h-full object-cover"
-                aria-label={video.title}
+        {/* Auto-scrolling slider */}
+        <div className="relative">
+          <div className="flex gap-6 animate-scroll-videos">
+            {duplicatedVideos.map((video, index) => (
+              <div 
+                key={`${video.id}-${index}`}
+                className="flex-shrink-0 w-[500px] aspect-video rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-smooth group"
               >
-                Your browser does not support the video tag.
-              </video>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-smooth">
-                <p className="text-background text-sm font-medium">{video.title}</p>
+                <video 
+                  src={video.src}
+                  controls
+                  preload="metadata"
+                  className="w-full h-full object-cover"
+                  aria-label={video.title}
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-smooth">
+                  <p className="text-background text-sm font-medium">{video.title}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes scroll-videos {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-500px * 10 - 1.5rem * 10));
+          }
+        }
+
+        .animate-scroll-videos {
+          animation: scroll-videos 60s linear infinite;
+        }
+
+        .animate-scroll-videos:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };

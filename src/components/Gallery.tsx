@@ -1,42 +1,26 @@
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
-import gallery7 from "@/assets/gallery-7.jpg";
-import gallery8 from "@/assets/gallery-8.jpg";
-import gallery9 from "@/assets/gallery-9.jpg";
-import gallery10 from "@/assets/gallery-10.jpg";
-import gallery11 from "@/assets/gallery-11.jpg";
-import gallery12 from "@/assets/gallery-12.jpg";
-import gallery13 from "@/assets/gallery-13.jpg";
-import gallery14 from "@/assets/gallery-14.jpg";
-import gallery15 from "@/assets/gallery-15.jpg";
-import gallery16 from "@/assets/gallery-16.jpg";
-import gallery17 from "@/assets/gallery-17.jpg";
-import gallery18 from "@/assets/gallery-18.jpg";
+import livingRoom4 from "@/assets/new-gallery/Living_Room_4.png.asset.json";
+import livingRoom3 from "@/assets/new-gallery/Living_Room_3.png.asset.json";
+import room1 from "@/assets/new-gallery/Room_1.png.asset.json";
+import room12 from "@/assets/new-gallery/Room_1.2.png.asset.json";
+import room31 from "@/assets/new-gallery/Room_3.1.png.asset.json";
+import view1 from "@/assets/new-gallery/View_1.png.asset.json";
+import view2 from "@/assets/new-gallery/View_2.png.asset.json";
+import view6 from "@/assets/new-gallery/View_6.png.asset.json";
+import view10 from "@/assets/new-gallery/View_10.png.asset.json";
+import view11 from "@/assets/new-gallery/View_11.png.asset.json";
 
 const Gallery = () => {
   const images = [
-    { id: 1, src: gallery1, alt: "Shangrilla House Bhurban - Elegant seating area with stunning Murree mountain views" },
-    { id: 2, src: gallery2, alt: "Luxury guest house bedroom in Bhurban with natural light and modern amenities" },
-    { id: 3, src: gallery3, alt: "Charming entrance of holiday home in Bhurban near Murree" },
-    { id: 4, src: gallery4, alt: "Beautiful terrace at Shangrilla House with outdoor seating and mountain views" },
-    { id: 5, src: gallery5, alt: "Interior design of premium guest house in Bhurban Pakistan" },
-    { id: 6, src: gallery6, alt: "Breathtaking Murree and Nathia Gali mountain view from Shangrilla House room" },
-    { id: 7, src: gallery7, alt: "Cozy family-friendly bedroom at Bhurban holiday home with comfortable seating" },
-    { id: 8, src: gallery8, alt: "Well-appointed luxury bedroom suite in Bhurban guest house near Murree" },
-    { id: 9, src: gallery9, alt: "Bright elegant bedroom at Shangrilla House Bhurban vacation rental" },
-    { id: 10, src: gallery10, alt: "Spacious terrace with mountain view seating at Shangrilla House Bhurban guest house" },
-    { id: 11, src: gallery11, alt: "Panoramic Murree hills view from Shangrilla House Bhurban holiday home" },
-    { id: 12, src: gallery12, alt: "Beautiful rainbow over Murree mountains visible from Shangrilla House terrace" },
-    { id: 13, src: gallery13, alt: "Stunning mountain vista from covered terrace at Bhurban luxury guest house" },
-    { id: 14, src: gallery14, alt: "Golden sunset view over Murree and Nathia Gali from Shangrilla House Bhurban" },
-    { id: 15, src: gallery15, alt: "Winter snow scenery near Shangrilla House Bhurban - perfect for snow lovers" },
-    { id: 16, src: gallery16, alt: "Night view of Murree hills from Shangrilla House Bhurban vacation rental" },
-    { id: 17, src: gallery17, alt: "Peaceful mountain scenery from balcony at Shangrilla House guest house Bhurban" },
-    { id: 18, src: gallery18, alt: "Exterior view of Shangrilla House Bhurban - premium holiday home near Murree" }
+    { id: 1, src: view6.url, alt: "Exterior view of Shangrilla House Bhurban - premium pagoda-style holiday home near Murree" },
+    { id: 2, src: livingRoom4.url, alt: "Spacious living room at Shangrilla House Bhurban with elegant green sofas and wood ceiling" },
+    { id: 3, src: livingRoom3.url, alt: "Grand wooden staircase and hall in Bhurban luxury guest house near Murree" },
+    { id: 4, src: room1.url, alt: "Cozy master bedroom with king-size bed at Shangrilla House Bhurban" },
+    { id: 5, src: room12.url, alt: "Bedroom seating area with tan armchairs at Bhurban family guest house" },
+    { id: 6, src: room31.url, alt: "Charming bedroom lounger by the window at Shangrilla House Bhurban" },
+    { id: 7, src: view2.url, alt: "Front terrace with outdoor dining at Shangrilla House Bhurban holiday home" },
+    { id: 8, src: view1.url, alt: "Breathtaking Murree mountain view from Shangrilla House Bhurban terrace" },
+    { id: 9, src: view10.url, alt: "Panoramic Bhurban hills and valley view from Shangrilla House" },
+    { id: 10, src: view11.url, alt: "Lush green Bhurban hillside scenery near Shangrilla House guest house" }
   ];
 
   return (

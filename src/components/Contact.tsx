@@ -3,11 +3,51 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { useState } from "react";
+import { z } from "zod";
+
+const INQUIRY_ENDPOINT = "https://formsubmit.co/ajax/sheryarabbasi7@gmail.com";
+
+const inquirySchema = z.object({
+  name: z.string().trim().min(1, "Please enter your name").max(100),
+  email: z.string().trim().email("Please enter a valid email").max(255),
+  phone: z.string().trim().min(5, "Please enter your phone number").max(30),
+  message: z.string().trim().max(1000).optional(),
+});
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Thank you for your inquiry! We'll get back to you soon.");
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const parsed = inquirySchema.safeParse(Object.fromEntries(fd));
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0].message);
+      return;
+    }
+    setSending(true);
+    try {
+      const res = await fetch(INQUIRY_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...parsed.data,
+          _subject: `New inquiry from ${parsed.data.name} - Shangrilla House`,
+          _replyto: parsed.data.email,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      if (!res.ok) throw new Error("Send failed");
+      toast.success("Thank you for your inquiry! We'll get back to you soon.");
+      form.reset();
+    } catch {
+      toast.error("Sorry, your inquiry could not be sent. Please call or WhatsApp us.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -81,7 +121,7 @@ const Contact = () => {
                   Full Name *
                 </label>
                 <Input 
-                  id="name" 
+                  id="name" name="name" 
                   required 
                   placeholder="Your name"
                   className="bg-background border-border"
@@ -93,7 +133,7 @@ const Contact = () => {
                   Email *
                 </label>
                 <Input 
-                  id="email" 
+                  id="email" name="email" 
                   type="email" 
                   required 
                   placeholder="your@email.com"
@@ -106,7 +146,7 @@ const Contact = () => {
                   Phone *
                 </label>
                 <Input 
-                  id="phone" 
+                  id="phone" name="phone" 
                   type="tel" 
                   required 
                   placeholder="+92 XXX XXXXXXX"
@@ -119,7 +159,7 @@ const Contact = () => {
                   Message
                 </label>
                 <Textarea 
-                  id="message" 
+                  id="message" name="message" 
                   rows={4}
                   placeholder="Tell us about your visit..."
                   className="bg-background border-border resize-none"
@@ -129,8 +169,9 @@ const Contact = () => {
               <Button 
                 type="submit" 
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth text-lg py-6"
+                disabled={sending}
               >
-                Send Inquiry
+                {sending ? "Sending..." : "Send Inquiry"}
               </Button>
             </form>
           </div>

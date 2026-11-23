@@ -1,4 +1,4 @@
-import { Bed, Bath, UtensilsCrossed, Sun, Tv, Zap, UserCheck, Car, Snowflake, Home } from "lucide-react";
+import { Bed, Bath, UtensilsCrossed, Sun, Tv, Zap, UserCheck, Car, Snowflake, Home, Wifi } from "lucide-react";
 
 const Amenities = () => {
   const amenities = [
@@ -8,6 +8,7 @@ const Amenities = () => {
     { icon: Sun, name: "Front & Back Terraces" },
     { icon: Home, name: "Built on 1 Kanal" },
     { icon: Tv, name: "TV & Entertainment" },
+    { icon: Wifi, name: "Fast WiFi" },
     { icon: Snowflake, name: "Hot Water & Heaters" },
     { icon: Zap, name: "UPS Backup Power" },
     { icon: UserCheck, name: "24/7 Caretaker" },

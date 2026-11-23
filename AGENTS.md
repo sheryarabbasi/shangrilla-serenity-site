@@ -1,0 +1,1 @@
+- Gallery images must be local files in src/assets (not CDN pointers): live site is GitHub Pages, which cannot serve Lovable CDN URLs.

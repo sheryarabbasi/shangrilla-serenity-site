@@ -1,1 +1,3 @@
 - Gallery images must be local files in src/assets (not CDN pointers): live site is GitHub Pages, which cannot serve Lovable CDN URLs.
+- Store contact inquiries through the write-only Cloud function before the existing browser FormSubmit relay; durable storage must survive email failures, and inquiry records must never be publicly readable.
+- Supply public Cloud connection settings in the GitHub Pages build workflow because its runner has no sandbox environment; never put privileged credentials in this workflow.

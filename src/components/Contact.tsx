@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { useState } from "react";
 import { z } from "zod";
-
-const INQUIRY_ENDPOINT = "https://formsubmit.co/ajax/sheryarabbasi7@gmail.com";
+import { submitInquiry } from "@/lib/submit-inquiry";
 
 const inquirySchema = z.object({
   name: z.string().trim().min(1, "Please enter your name").max(100),
@@ -27,21 +26,19 @@ const Contact = () => {
       toast.error(parsed.error.issues[0].message);
       return;
     }
+    const { name, email, phone, message } = parsed.data;
+    if (!name || !email || !phone) {
+      toast.error("Please enter your name, email and phone number.");
+      return;
+    }
     setSending(true);
     try {
-      const res = await fetch(INQUIRY_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          ...parsed.data,
-          _subject: `New inquiry from ${parsed.data.name} - Shangrilla House`,
-          _replyto: parsed.data.email,
-          _template: "table",
-          _captcha: "false",
-        }),
-      });
-      if (!res.ok) throw new Error("Send failed");
-      toast.success("Thank you for your inquiry! We'll get back to you soon.");
+      const result = await submitInquiry({ name, email, phone, message });
+      if (result.emailed) {
+        toast.success("Thank you! Your inquiry has been received.");
+      } else {
+        toast.success("Your inquiry has been saved. The email notification could not be sent.");
+      }
       form.reset();
     } catch {
       toast.error("Sorry, your inquiry could not be sent. Please call or WhatsApp us.");

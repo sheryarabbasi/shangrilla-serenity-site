@@ -28,6 +28,10 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          VITE_SUPABASE_URL: https://wkeiymurtaybwshwqwjz.supabase.co
+          VITE_SUPABASE_PROJECT_ID: wkeiymurtaybwshwqwjz
+          VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_HsWzK-VVYLntNCI3Dqk2CA_X7SyL0Gb
         run: npm run build
 
       - name: Deploy to gh-pages
